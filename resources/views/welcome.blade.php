@@ -15,7 +15,7 @@
             <div class="p-2 rounded-full bg-white/20 backdrop-blur">
                 <i data-lucide="activity" class="h-6 w-6 text-white"></i>
             </div>
-            <span class="text-xl font-bold">MediCareee</span>
+            <span class="text-xl font-bold">MediCare</span>
         </div>
         <a href="{{ route('login') }}" class="bg-white text-blue-700 font-semibold px-4 py-2 rounded shadow hover:bg-gray-100 transition">Login</a>
     </nav>
