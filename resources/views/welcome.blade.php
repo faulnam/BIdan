@@ -24,9 +24,9 @@
     <div class="relative overflow-hidden">
         <div class="carousel w-full h-96 relative">
             <div class="absolute w-full h-full flex transition-all duration-1000 ease-in-out" id="carousel-slides">
-                <img src="https://source.unsplash.com/1600x600/?clinic" class="w-full object-cover" />
-                <img src="https://source.unsplash.com/1600x600/?pharmacy" class="w-full object-cover" />
-                <img src="https://source.unsplash.com/1600x600/?healthcare" class="w-full object-cover" />
+                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Faklab.co.id%2Fefektifkah-menggunakan-nurse-call-dalam-memanggil-suster%2F&psig=AOvVaw2xcHYNpvd-lqJLsDEqaVRa&ust=1750335279600000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDrs5b5-o0DFQAAAAAdAAAAABA_" class="w-full object-cover" />
+                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsamatorhealthcare.com%2Fprojects%2Fnurse-call-system%2F&psig=AOvVaw2xcHYNpvd-lqJLsDEqaVRa&ust=1750335279600000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDrs5b5-o0DFQAAAAAdAAAAABBa" class="w-full object-cover" />
+                <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Ffikes.almaata.ac.id%2Fwp-content%2Fuploads%2F2019%2F01%2F1709566759551-1280x720.jpg&tbnid=kIodhUUGv4h2gM&vet=10CAIQxiAoAGoXChMIoOetoP76jQMVAAAAAB0AAAAAEAc..i&imgrefurl=https%3A%2F%2Ffikes.almaata.ac.id%2Fnursing-science%2F&docid=WOfRfDC6rO0UzM&w=1280&h=720&itg=1&q=foto%20bidan%20web&hl=id&ved=0CAIQxiAoAGoXChMIoOetoP76jQMVAAAAAB0AAAAAEAc" class="w-full object-cover" />
             </div>
         </div>
     </div>
