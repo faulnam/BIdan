@@ -92,61 +92,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl mb-6">
-                        <i data-lucide="users" class="h-8 w-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Patient Management</h3>
-                    <p class="text-gray-600 leading-relaxed">Comprehensive patient records with complete medical history and visit tracking for better care coordination.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-teal-500 to-green-500 rounded-2xl mb-6">
-                        <i data-lucide="pill" class="h-8 w-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Pharmacy Integration</h3>
-                    <p class="text-gray-600 leading-relaxed">Complete inventory management with automated stock alerts and prescription tracking systems.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl mb-6">
-                        <i data-lucide="stethoscope" class="h-8 w-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Service Management</h3>
-                    <p class="text-gray-600 leading-relaxed">Organize medical services with pricing, staff assignments, and comprehensive profit tracking.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl mb-6">
-                        <i data-lucide="clock" class="h-8 w-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Real-time Analytics</h3>
-                    <p class="text-gray-600 leading-relaxed">Live dashboard with key metrics, revenue tracking, and performance insights for data-driven decisions.</p>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl mb-6">
-                        <i data-lucide="shield" class="h-8 w-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Secure & Compliant</h3>
-                    <p class="text-gray-600 leading-relaxed">Role-based access control ensuring data security and regulatory compliance for healthcare standards.</p>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift hover:shadow-2xl transition-all duration-300">
-                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl mb-6">
-                        <i data-lucide="award" class="h-8 w-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Professional Grade</h3>
-                    <p class="text-gray-600 leading-relaxed">Enterprise-level features designed specifically for modern healthcare facilities and practices.</p>
-                </div>
-            </div>
+            
         </div>
     </section>
 
@@ -199,27 +145,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-teal-600 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/10"></div>
-        <div class="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Healthcare Practice?
-            </h2>
-            <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                Join thousands of healthcare professionals who trust MediCare for their daily operations and patient care management.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ route('login') }}" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Get Started Now
-                </a>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
-                    Schedule Demo
-                </button>
             </div>
         </div>
     </section>
