@@ -54,84 +54,13 @@
         </div>
     </nav>
 
-    <!-- Hero Banner with Auto Slider -->
-    <section class="relative h-screen overflow-hidden mt-16">
-        <div class="carousel w-full h-full relative">
-            <div class="absolute w-full h-full flex transition-transform duration-1000 ease-in-out" id="carousel-slides">
-                <!-- Slide 1 -->
-                <div class="w-full h-full flex-shrink-0 relative">
-                    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
-                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-teal-900/60"></div>
-                    </div>
-                    <div class="relative h-full flex items-center justify-center text-center px-4">
-                        <div class="max-w-4xl mx-auto slide-enter">
-                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                                Modern Healthcare <span class="text-teal-300">Management</span>
-                            </h1>
-                            <p class="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
-                                Streamline your clinic operations with our comprehensive management system designed for modern healthcare professionals
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="{{ route('login') }}" class="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
-                                    Get Started Today
-                                </a>
-                                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
-                                    Watch Demo
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="w-full h-full flex-shrink-0 relative">
-                    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
-                        <div class="absolute inset-0 bg-gradient-to-r from-teal-900/80 to-blue-900/60"></div>
-                    </div>
-                    <div class="relative h-full flex items-center justify-center text-center px-4">
-                        <div class="max-w-4xl mx-auto">
-                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                                Complete <span class="text-blue-300">Pharmacy</span> Solutions
-                            </h1>
-                            <p class="text-xl md:text-2xl text-teal-100 mb-8 leading-relaxed max-w-3xl mx-auto">
-                                Manage inventory, prescriptions, and patient records all in one integrated platform
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="{{ route('login') }}" class="bg-gradient-to-r from-teal-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-teal-700 hover:to-blue-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
-                                    Explore Features
-                                </a>
-                                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-600 transition-all duration-300">
-                                    Learn More
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="w-full h-full flex-shrink-0 relative">
-                    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');">
-                        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/60"></div>
-                    </div>
-                    <div class="relative h-full flex items-center justify-center text-center px-4">
-                        <div class="max-w-4xl mx-auto">
-                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                                Patient-Centered <span class="text-purple-300">Care</span>
-                            </h1>
-                            <p class="text-xl md:text-2xl text-purple-100 mb-8 leading-relaxed max-w-3xl mx-auto">
-                                Deliver exceptional healthcare with our intuitive patient management and tracking tools
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="{{ route('login') }}" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
-                                    Start Your Journey
-                                </a>
-                                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-purple-600 transition-all duration-300">
-                                    Contact Sales
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Banner Carousel -->
+    <div class="relative overflow-hidden">
+        <div class="carousel w-full h-96 relative">
+            <div class="absolute w-full h-full flex transition-all duration-1000 ease-in-out" id="carousel-slides">
+                <img src="https://source.unsplash.com/1600x600/?clinic" class="w-full object-cover" />
+                <img src="https://source.unsplash.com/1600x600/?pharmacy" class="w-full object-cover" />
+                <img src="https://source.unsplash.com/1600x600/?healthcare" class="w-full object-cover" />
             </div>
         </div>
 
