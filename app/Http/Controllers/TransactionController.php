@@ -10,6 +10,7 @@ use App\Models\Service;
 use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use PDF; // Tambahkan ini untuk PDF
 
 class TransactionController extends Controller
 {
@@ -21,7 +22,7 @@ class TransactionController extends Controller
         if ($request->has('search') && $request->search) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
-                $q->where('transaction_id', 'like', "%{$search}%")
+                $q->where('id', 'like', "%{$search}%")
                   ->orWhereHas('patient', function($pq) use ($search) {
                       $pq->where('name', 'like', "%{$search}%");
                   });
@@ -36,7 +37,7 @@ class TransactionController extends Controller
                     $query->whereDate('created_at', $today);
                     break;
                 case 'week':
-                    $query->whereBetween('created_at', [$today->subWeek(), $today->addWeek()]);
+                    $query->whereBetween('created_at', [$today->copy()->subWeek(), $today->copy()->addDay()]);
                     break;
                 case 'month':
                     $query->whereMonth('created_at', $today->month)
@@ -75,7 +76,6 @@ class TransactionController extends Controller
             $total = 0;
             $items = [];
 
-            // Calculate total and prepare items
             foreach ($request->items as $item) {
                 if ($item['type'] === 'service') {
                     $service = Service::findOrFail($item['id']);
@@ -90,11 +90,11 @@ class TransactionController extends Controller
                     ];
                 } else {
                     $product = Product::findOrFail($item['id']);
-                    
+
                     if ($product->stock < $item['quantity']) {
-                        throw new \Exception("Insufficient stock for {$product->name}");
+                        throw new \Exception("Stok tidak cukup untuk {$product->name}");
                     }
-                    
+
                     $itemTotal = $product->selling_price * $item['quantity'];
                     $items[] = [
                         'type' => 'product',
@@ -105,14 +105,12 @@ class TransactionController extends Controller
                         'total' => $itemTotal,
                     ];
 
-                    // Update stock
                     $product->decrement('stock', $item['quantity']);
                 }
-                
+
                 $total += $itemTotal;
             }
 
-            // Create transaction
             $transaction = Transaction::create([
                 'patient_id' => $request->patient_id,
                 'user_id' => auth()->id(),
@@ -120,7 +118,6 @@ class TransactionController extends Controller
                 'status' => 'completed',
             ]);
 
-            // Create transaction items
             foreach ($items as $item) {
                 $transaction->items()->create($item);
             }
@@ -128,8 +125,7 @@ class TransactionController extends Controller
             DB::commit();
 
             return redirect()->route('transactions.index')
-                ->with('success', 'Transaction created successfully.');
-
+                ->with('success', 'Transaksi berhasil dibuat.');
         } catch (\Exception $e) {
             DB::rollback();
             return back()->withErrors(['error' => $e->getMessage()]);
@@ -144,7 +140,6 @@ class TransactionController extends Controller
 
     public function destroy(Transaction $transaction)
     {
-        // Only admin can delete transactions
         if (!auth()->user()->isAdmin()) {
             abort(403);
         }
@@ -152,6 +147,19 @@ class TransactionController extends Controller
         $transaction->delete();
 
         return redirect()->route('transactions.index')
-            ->with('success', 'Transaction deleted successfully.');
+            ->with('success', 'Transaksi berhasil dihapus.');
+    }
+
+    /**
+     * Download or print transaction as PDF.
+     */
+    public function downloadPDF(Transaction $transaction)
+    {
+        $transaction->load(['patient', 'user', 'items']);
+
+        $pdf = PDF::loadView('transactions.pdf', compact('transaction'))
+                  ->setPaper('A5', 'portrait');
+
+        return $pdf->download('transaction_' . $transaction->id . '.pdf');
     }
 }

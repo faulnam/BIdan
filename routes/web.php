@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PatientController;
@@ -8,6 +7,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
+
+
 
 // Public Landing Page
 Route::get('/', function () {
@@ -29,15 +30,21 @@ Route::middleware('auth')->group(function () {
     
     // Services
     Route::resource('/services', ServiceController::class);
+
+    Route::get('/transactions/{transaction}/pdf', [TransactionController::class, 'downloadPDF'])
+    ->name('transactions.downloadPDF');
     
     // Products
     Route::resource('/products', ProductController::class);
     
     // Transactions
     Route::resource('/transactions', TransactionController::class);
+
+    Route::resource('transactions', TransactionController::class);
+Route::get('/transactions/{transaction}/download', [TransactionController::class, 'downloadPDF'])->name('transactions.downloadPDF');
+
+
+    Route::get('/staff', [StaffController::class, 'index'])->name('staff.index');
+
     
-    // Staff (Admin only)
-    Route::middleware('can:admin')->group(function () {
-        Route::resource('staff', StaffController::class)->only(['index']);
-    });
 });
